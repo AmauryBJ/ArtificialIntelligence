@@ -1,0 +1,9 @@
+Virtual Environement :
+
+Install : sudo pip3 install virtualenv
+
+Create : python3 -m venv tflite1-env 
+
+
+Run : Moove into the folder wou need
+		source tflite1-env/bin/activate
