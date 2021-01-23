@@ -1,0 +1,8 @@
+Tuto :
+https://github.com/dusty-nv/jetson-inference
+
+Youtube Tutos List :
+https://www.youtube.com/watch?v=uvU8AXY1170&list=PL5B692fm6--uQRRDTPsJDp4o0xbzkoyf8&index=1
+
+JetCam :
+https://github.com/NVIDIA-AI-IOT/jetcam

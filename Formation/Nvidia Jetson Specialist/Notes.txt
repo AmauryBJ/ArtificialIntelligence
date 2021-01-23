@@ -1,0 +1,50 @@
+How to Begin :
+
+- Flash the SD Card :
+    - NVIDIA Official image :
+    - Jetbot Image (Perf issue ?) :
+
+
+- Configure the wifi with screen and keyboard (Netgear n150 used)
+    -   Edimax wifi card is not good :
+        - Driver not found on official nvidia image
+        - on jetbot wifi recognise but very slow
+
+- Connect to ssh
+
+- Increase SWAP file :
+
+    free -m
+
+    # Disable ZRAM:
+    sudo systemctl disable nvzramconfig
+
+    # Create 4GB swap file
+    sudo fallocate -l 4G /mnt/4GB.swap
+    sudo chmod 600 /mnt/4GB.swap
+    sudo mkswap /mnt/4GB.swap
+
+    # Append the following line to /etc/fstab
+    sudo su
+    echo "/mnt/4GB.swap swap swap defaults 0 0" >> /etc/fstab
+
+    # REBOOT!
+    reboot
+
+
+- Deploy Docker :
+
+    mkdir -p ~/nvdli-data
+
+    # Create docker 
+    echo "sudo docker run --runtime nvidia -it --rm --network host \
+    --volume ~/nvdli-data:/nvdli-nano/data \
+    --volume /tmp/argus_socket:/tmp/argus_socket \
+    --device /dev/video0 \
+    --device /dev/video1 \
+    nvcr.io/nvidia/dli/dli-nano-ai:v2.0.1-r32.4.4" > docker_dli_run.sh
+    chmod +x docker_dli_run.sh
+
+    # Run docker
+    ./docker_dli_run.sh
+

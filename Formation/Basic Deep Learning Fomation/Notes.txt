@@ -1,0 +1,4 @@
+Notes :
+
+Types d'aprentissage :
+ -  Supervisé : on doit dire le label des données dentrée

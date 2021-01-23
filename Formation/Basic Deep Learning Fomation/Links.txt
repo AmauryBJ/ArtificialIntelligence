@@ -1,0 +1,8 @@
+Courses :
+https://www.youtube.com/watch?v=aircAruvnKk&t=270s
+
+Base en FR :
+https://www.technologies-ebusiness.com/enjeux-et-tendances/le-deep-learning-pas-a-pas
+
+Different Type of Learning :
+https://towardsdatascience.com/supervised-unsupervised-and-deep-learning-aa61a0e5471c
