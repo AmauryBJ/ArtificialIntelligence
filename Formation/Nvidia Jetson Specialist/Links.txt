@@ -6,3 +6,9 @@ https://www.youtube.com/watch?v=uvU8AXY1170&list=PL5B692fm6--uQRRDTPsJDp4o0xbzko
 
 JetCam :
 https://github.com/NVIDIA-AI-IOT/jetcam
+
+JetBot Sparkfun :
+https://learn.sparkfun.com/tutorials/assembly-guide-for-sparkfun-jetbot-ai-kit-v20/4-software-setup-guide-from-nvidia
+
+Wifi :
+https://www.jetsonhacks.com/2019/04/08/jetson-nano-intel-wifi-and-bluetooth/
