@@ -2,12 +2,12 @@
 # NEED JETPACK 4.4 iso file available here :
 # https://developer.nvidia.com/jetpack-sdk-441-archive
 #
+# Default Password for JupyterLab is : jetson
+#
 
 #!/bin/bash
 
 set -e
-
-password='jetson'
 
 # Record the time this script starts
 date
@@ -60,8 +60,8 @@ sudo -H pip3 install Cython
 sudo -H pip3 install numpy torch-1.6.0rc2-cp36-cp36m-linux_aarch64.whl 
 
 #AMOU - Packet missing 
-sudo apt-get install libavformat-dev
-sudo apt-get install libswscale-dev
+sudo apt-get install -y libavformat-dev
+sudo apt-get install -y libswscale-dev
 
 # Install torchvision package
 echo -e "\e[45m Install torchvision package \e[0m"
@@ -91,7 +91,7 @@ sudo -H pip3 install jupyter jupyterlab
 sudo -H jupyter labextension install @jupyter-widgets/jupyterlab-manager
 
 jupyter lab --generate-config
-python3 -c "from notebook.auth.security import set_password; set_password('$password', '$HOME/.jupyter/jupyter_notebook_config.json')"
+python3 -c "from notebook.auth.security import set_password; set_password('jetson', '$HOME/.jupyter/jupyter_notebook_config.json')"
 
 # fix for permission error
 sudo chown -R jetbot:jetbot ~/.local/share/
@@ -141,7 +141,14 @@ sudo apt-get install -y \
     
 # install zmq dependency (should actually already be resolved by jupyter)
 sudo -H pip3 install pyzmq
-    
+
+#install Jetcam 
+git clone https://github.com/NVIDIA-AI-IOT/jetcam
+cd jetcam
+sudo python3 setup.py install
+
+#install sparkfun lib  
+sudo -H pip3 install sparkfun-qwiic
 
 # Optimize the system configuration to create more headroom
 sudo nvpmodel -m 0

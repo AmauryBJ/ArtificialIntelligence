@@ -20,7 +20,7 @@ https://github.com/NVIDIA-AI-IOT/jetbot/blob/master/scripts/create-sdcard-image-
     sudo apt-get update
     sudo apt install python3-pip python3-pil
     sudo pip3 install --upgrade numpy 
-
+ 
 # Install the pre-built TensorFlow pip wheel
     echo -e "\e[48;5;202m Install the pre-built TensorFlow pip wheel \e[0m"
     sudo apt-get update
