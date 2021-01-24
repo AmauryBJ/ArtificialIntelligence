@@ -143,8 +143,17 @@ sudo apt-get install -y \
 sudo -H pip3 install pyzmq
 
 #install Jetcam 
+cd
 git clone https://github.com/NVIDIA-AI-IOT/jetcam
 cd jetcam
+sudo python3 setup.py install
+
+#install Jetbot
+cd
+mkdir jetbot
+cd jetbot
+wget https://cdn.sparkfun.com/assets/learn_tutorials/9/3/3/jetbot.zip
+unzip jetbot.zip
 sudo python3 setup.py install
 
 #install sparkfun lib  
@@ -158,7 +167,28 @@ sudo systemctl disable nvzramconfig.service
 # Copy JetBot notebooks to home directory
 cp -r ~/jetbot/notebooks ~/Notebooks
 
+### Optionnal ###
+# Download model for avoidance
+# mkdir models
+# cd models
+# wget "https://drive.google.com/u/0/uc?export=download&confirm=TiN3&id=1UsRax8bR3R-e-0-80KfH2zAt-IyRPtnW"
+
+### TODO CLEANUP FILES IN HOME
+cd
+sudo rm -r jetbot/
+sudo rm -r jetcam/
+sudo rm -r Desktop/
+sudo rm -r vision/
+sudo rm -r torch2trt/
+sudo rm torch-1.6.0rc2-cp36-cp36m-linux_aarch64.whl 
+
 echo -e "\e[42m All done! \e[0m"
 
 #record the time this script ends
 date
+
+### INFO
+
+# Launch Jupyter 
+# jupyter notebook --ip=0.0.0.0 --no-browser
+# On client http://192.168.1.130:8888/lab -> password : jetson
