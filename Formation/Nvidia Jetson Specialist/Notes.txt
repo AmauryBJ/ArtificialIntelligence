@@ -48,3 +48,18 @@ How to Begin :
     # Run docker
     ./docker_dli_run.sh
 
+
+##EDIMAX DRIVER INSTALL
+git clone https://github.com/lwfinger/rtl8723bu.git
+$ cd rtl8723bu
+$ export ARCH-arm64
+$ make
+$ sudo make install
+$ sudo reboot
+
+## HELP TO recompile SSD Tensor 
+#https://github.com/AastaNV/TRT_object_detection
+# LINK TO MODEL http://download.tensorflow.org/models/object_detection/ssd_mobilenet_v2_coco_2018_03_29.tar.gz
+
+## Convert Jupyter to Py file
+jupyter nbconvert --to python nb.ipynb
