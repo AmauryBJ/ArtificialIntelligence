@@ -63,3 +63,21 @@ $ sudo reboot
 
 ## Convert Jupyter to Py file
 jupyter nbconvert --to python nb.ipynb
+
+## Remote Desktop
+https://medium.com/@gabriel.giani/tips-and-tricks-no-1-jetson-nano-remote-access-vnc-8b606fa125f8
+
+sudo nano /usr/share/glib-2.0/schemas/org.gnome.Vino.gschema.xml
+
+Add this key:
+<key name=’enabled’ type=’b’>
+<summary>Enable remote access to the desktop</summary>
+<description>
+If true, allows remote access to the desktop via the RFB
+protocol. Users on remote machines may then connect to the
+desktop using a VNC viewer.
+</description>
+<default>true</default>
+</key>
+
+sudo glib-compile-schemas /usr/share/glib-2.0/schemas
