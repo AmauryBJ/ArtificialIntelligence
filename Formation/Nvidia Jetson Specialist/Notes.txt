@@ -81,3 +81,6 @@ desktop using a VNC viewer.
 </key>
 
 sudo glib-compile-schemas /usr/share/glib-2.0/schemas
+
+# No monitor
+https://askubuntu.com/questions/1033436/how-to-use-ubuntu-18-04-on-vnc-without-display-attached
