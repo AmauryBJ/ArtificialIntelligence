@@ -1,0 +1,20 @@
+Create a file called “/etc/systemd/system/jetsonStartupAmou.service”
+
+[Unit]
+Description=mything: do my own thing
+After=multi-user.target
+
+[Service]
+ExecStart=/usr/bin/python3 /home/amou/Nvidia_Robot_AI/Code/AutoFollowPerson.py 
+
+[Install]
+WantedBy=multi-user.target
+
+
+(If your thing needs the X windows GUI to be running, change all “multi-user.target” to be “graphical.target” in the above file)
+
+    Run these two commands in a shell:
+
+$ sudo systemctl enable jetsonStartupAmou.service
+$ sudo systemctl status jetsonStartupAmou.service
+$ sudo systemctl start jetsonStartupAmou.service
